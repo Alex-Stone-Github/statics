@@ -2,5 +2,7 @@
 
 meson setup build
 meson compile -C build
-export VK_INSTANCE_LAYERS=VK_LAYER_KHRONOS_validation
+# Wherever the lunarg vulkan validation layers are installed to
+source ~/Install/vulkansdk-linux-x86_64-1.4.350.0/1.4.350.0/setup-env.sh
+meson test -C build -v
 ./build/statics
